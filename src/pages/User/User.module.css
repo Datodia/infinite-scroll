@@ -1,0 +1,38 @@
+.container {
+    width: 80%;
+    border: 1px solid gray;
+    margin: auto;
+}
+
+.user {
+    width: 95%;
+    margin: auto;
+    display: flex;
+}
+
+.user img {
+    width: 220px;
+}
+
+.user .info {
+    border: 1px solid gray;
+}
+
+
+
+img {
+    width: 100%;
+}
+
+.friends {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    width: 280px;
+    height: auto;
+    border: 1px solid gray;
+}
