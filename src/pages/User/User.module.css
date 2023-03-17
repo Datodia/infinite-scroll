@@ -2,12 +2,14 @@
     width: 80%;
     border: 1px solid gray;
     margin: auto;
+    padding-top: 20px;
 }
 
 .user {
     width: 95%;
     margin: auto;
     display: flex;
+    gap: 20px;
 }
 
 .user img {
@@ -16,23 +18,99 @@
 
 .user .info {
     border: 1px solid gray;
+    width: 70%;
+    padding: 10px;
 }
 
+.user .info h4 {
+    font-weight: 300;
+    font-style: italic;
+}
 
+.user .address {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.user .infoTitle,
+.user .addressTitle {
+    position: absolute;
+    top: 14px;
+    width: auto;
+    background-color: white;
+    font-weight: 300;
+    padding: 0 3px;
+}
+
+.flex {
+    display: flex;
+    gap: 5px;
+}
+
+.user p span {
+    text-decoration: underline;
+}
 
 img {
     width: 100%;
 }
 
-.friends {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.container .history {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px;
 }
 
-.card {
+.friend {
+    margin-top: 60px;
+    padding: 0 15px;
+}
+
+.friends {
+    width: 100%;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
+    gap: 30px;
+}
+
+.friends .card {
+
     width: 280px;
     height: auto;
     border: 1px solid gray;
+    text-decoration: none;
+    color: black
+}
+
+.history {
+    display: flex;
+    gap: 8px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .user {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user .info,
+    .user .address {
+        width: 100%;
+    }
+
+    .user .infoTitle {
+        top: 195px;
+        left: 45%;
+    }
+
+
+    .user .addressTitle {
+        left: 42%;
+        top: 425px;
+    }
+
+
 }

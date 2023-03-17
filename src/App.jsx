@@ -4,7 +4,6 @@ import { User } from './pages/User/User'
 
 function App() {
 
-
   return (
     <div className="App">
       <Routes>

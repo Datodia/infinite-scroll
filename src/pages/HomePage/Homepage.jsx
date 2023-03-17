@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import style from '../HomePage/Home.module.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import { Audio } from 'react-loader-spinner'
 
 function Homepage() {
     const [data, setData] = useState([]);
@@ -37,14 +38,23 @@ function Homepage() {
 
     return (
         <div className={style.container}>
-            {data.map(item => (
-                <Link to={`user/${item.id}`} className={style.card}>
+            {data.map((item, index) => (
+                <Link key={index} to={`user/${item.id}`} state={{ user: item }} className={style.card}>
                     <img src={`${item.imageUrl}?v=${item.id}`} alt="" />
                     <h3>{item.prefix} {item.name} {item.lastName}</h3>
-                    <h3>{item.title}</h3>
+                    <h4>{item.title}</h4>
                 </Link>
             ))}
-            {isLoading && <p>Loading...</p>}
+            {isLoading &&
+                <Audio
+                    height="80"
+                    width="80"
+                    radius="9"
+                    color='green'
+                    ariaLabel='three-dots-loading'
+                    wrapperStyle
+                    wrapperClass={isLoading ? { className: 'loading-spinner' } : undefined}
+                />}
         </div>
 
     )
